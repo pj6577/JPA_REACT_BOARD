@@ -10,8 +10,5 @@ public class BoardTestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BoardTestApplication.class, args);
 	}
-	@RequestMapping("/")
-	public String home(){
-		return "hizz";
-	}
+
 }

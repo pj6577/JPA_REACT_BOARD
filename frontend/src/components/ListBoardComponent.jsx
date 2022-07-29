@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import BoardService from "../service/BoardService";
+import CreateBoardComponent from './CreateBoardComponent';
+
 
 class ListBoardComponent extends Component {
+  
     constructor(props){
       super(props)
       //1.
@@ -10,25 +13,27 @@ class ListBoardComponent extends Component {
       }
       this.createBoard = this.createBoard.bind(this);
     }
-    //2.
+    2.
     componentDidMount(){
       BoardService.getBoards().then((res)=>{
-          console.log(res.data);
+        console.log(res.data);
         this.setState({boards: res.data});
-      });
+      }).catch(function(err){console.log(err)});
     }
     
     createBoard(){
-      this.props.history.push('/create-board/');
+      this.props.histoy.push("/create-board");
     }
-
+    
   render() {
     return (
       <div>
         <h2 className='text-center'>Board List</h2>
         <div className='row'>
+          
           <button className='btn btn-primary' onClick={this.createBoard}>글작성</button>
-        </div>
+      
+        </div>  
         <div className='row'>
           <table className='table table-striped table-bordered'>
             <thead>
@@ -50,8 +55,8 @@ class ListBoardComponent extends Component {
                     <td>{board.no}</td>
                     <td>{board.title}</td>
                     <td>{board.memberNo}</td>
-                    <td>{board.createTime}</td>
-                    <td>{board.updateTime}</td>
+                    <td>{board.createdTime}</td>
+                    <td>{board.updatedTime}</td>
                     <td>{board.likes}</td>
                     <td>{board.counts}</td>
                   </tr>

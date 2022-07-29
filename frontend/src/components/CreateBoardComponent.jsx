@@ -25,18 +25,21 @@ class CreateBoardComponent extends Component {
     this.setState({ memberNo: event.target.value });
   }
 
-  CreateBoard = (event) => {
+  createBoard = (event) => {
     event.preventDefault();
     let board = {
-      title: this.setState,
-      contnets: this.setState,
-      memberNo: this.setState
+      title: this.setState.title,
+      contnets: this.setState.contents,
+      memberNo: this.setState.memberNo
     };
     console.log("board=>" + JSON.stringify(board));
     BoardService.createBoard(board).then(res => {
       this.props.history.push('/board');
     });
   }
+  cancel() {
+    this.props.history.push('/board');
+}
 
   render() {
     return (

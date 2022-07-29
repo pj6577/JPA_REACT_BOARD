@@ -14,10 +14,12 @@ public class BoardService {
     private BoardRepository boardRepository;
 
     public List<Board> getAllBoard(){
+        System.out.println("Service getAll 함수 호출");
         return boardRepository.findAll();
     }
 
     public Board createBoard(Board board){
         return boardRepository.save(board);
     }
+
 }
