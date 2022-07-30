@@ -1,0 +1,5 @@
+오류 내용
+Invalid options object. Dev Server has been initialized using an options object that does not match the API schema.
+ - options.allowedHosts[0] should be a non-empty string.
+
+해결 > frontend 폴더에 package.json 안 "proxy": "http://localhost:8080", 제거후 정상작동 확인
