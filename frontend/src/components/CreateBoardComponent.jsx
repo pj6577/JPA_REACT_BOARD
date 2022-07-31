@@ -12,7 +12,7 @@ class CreateBoardComponent extends Component {
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
     this.changeContentsHandler = this.changeContentsHandler.bind(this);
     this.changeMemberNoHandler = this.changeMemberNoHandler.bind(this);
-    this.changeCreateHandler = this.CreateBoard.bind(this);
+    //this.changeCreateHandler = this.CreateBoard.bind(this);
   }
 
   changeTitleHandler = (event) => {
@@ -29,7 +29,7 @@ class CreateBoardComponent extends Component {
     event.preventDefault();
     let board = {
       title: this.setState.title,
-      contnets: this.setState.contents,
+      contents: this.setState.contents,
       memberNo: this.setState.memberNo
     };
     console.log("board=>" + JSON.stringify(board));

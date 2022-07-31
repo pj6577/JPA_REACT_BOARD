@@ -2,4 +2,27 @@
 Invalid options object. Dev Server has been initialized using an options object that does not match the API schema.
  - options.allowedHosts[0] should be a non-empty string.
 
-해결 > frontend 폴더에 package.json 안 "proxy": "http://localhost:8080", 제거후 정상작동 확인
+해결 > 
+2022-07-30
+frontend 폴더에 package.json 안 "proxy": "http://localhost:8080", 제거후 정상작동 확인
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+오류 내용
+Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+
+해결 >
+2022-07-31 
+ListBoardComponent.jsx class 형 > 함수형으로 변경
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+오류 내용 
+Access to XMLHttpRequest at 'http://localhost:8080/api/board' from origin 'http://localhost:3000' has been blocked by CORS policy:
+ Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+POST http://localhost:8080/api/board net::ERR_FAILED
+
+CreateBoardComponent:1 Uncaught (in promise) AxiosError {message: 'Network Error', name: 'AxiosError', code: 'ERR_NETWORK', config: {…}, request: XMLHttpRequest, …}
+
+해결 >
