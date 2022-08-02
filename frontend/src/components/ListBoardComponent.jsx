@@ -15,7 +15,7 @@ const ListBoardComponent = () => {
         <div>
             <h2 className='text-center'>Board List</h2>
             <div className='row'>
-                <button className='btn btn-primary' onClick={()=>{navigate("./CreateBoardComponent")}}>글작성</button>
+                <button className='btn btn-primary' onClick={()=>{navigate("/create-board")}}>글작성</button>
             </div>
             <div className='row'>
                 <table className='table table-striped table-bordered'>
@@ -33,7 +33,7 @@ const ListBoardComponent = () => {
                     <tbody>
                         {boards.map((board)=>(
                           // navigate 상세 주소로 수정
-                            <tr onClick={()=>{navigate("./CreateBoardComponent", {state:{
+                            <tr onClick={()=>{navigate("/read-board/"+board.no ,{state:{
                                 no : board.no,
                                 title : board.title,
                                 memberNo : board.memberNo,

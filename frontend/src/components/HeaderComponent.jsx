@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class HeaderComponent extends Component {
-    constructor(props) {
-        super(props)
+const HeaderComponent = () => {
+    return (
+        <div>
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+                <div><a href="http://localhost:3000" className="navbar-brand">Jsp & ReactBoard </a></div>
+            </nav> 
+        </div>
+    );
+};
 
-        this.state = {
-
-        }
-    }
-    render() {
-        return (
-            <div>
-                <header>
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                        <div><a href="https://localhost:3000" className="navbar-brand"> Board-FullStack-App</a></div>
-                    </nav>
-                </header>
-            </div>
-        );
-    }
-}
 export default HeaderComponent;

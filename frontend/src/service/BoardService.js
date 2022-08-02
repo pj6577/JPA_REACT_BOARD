@@ -8,7 +8,11 @@ class BoardService {
         return axios.get(BOARD_API_BASE_URL);
     }
     createBoard(board){
-        return axios.post(BOARD_API_BASE_URL, board).catch((console.log("글 작성 완료")));
+        return axios.post(BOARD_API_BASE_URL+"/create-board", board);
+    }
+
+    DetailBoards(no){
+        return axios.get(BOARD_API_BASE_URL+"/" + no);
     }
 }
 
