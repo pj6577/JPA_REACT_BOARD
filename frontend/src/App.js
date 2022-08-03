@@ -5,6 +5,7 @@ import ListBoardComponent from './components/ListBoardComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import CreateBoardComponent from './components/CreateBoardComponent';
+import ReadBoardComponent from './components/ReadBoardComponent';
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
             <Routes>       
               <Route path = "/" exact element = {<ListBoardComponent/>}></Route>
               <Route path = "/board" element = {<ListBoardComponent/>}></Route>
-              <Route path = "/CreateBoardComponent" element = {<CreateBoardComponent/>}></Route>
+              <Route path = "/create-board" element = {<CreateBoardComponent/>}></Route>
+              <Route path = "/read-board/:id" element = {<ReadBoardComponent/>}></Route>
             </Routes>
           </div>
         <FooterComponent/> 
@@ -24,5 +26,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

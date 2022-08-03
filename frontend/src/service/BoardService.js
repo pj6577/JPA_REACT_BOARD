@@ -9,7 +9,11 @@ class BoardService {
     }
     
     createBoard(board){
-        return axios.post(BOARD_API_BASE_URL, board).catch(console.log("데이터 전송"));
+        return axios.post(BOARD_API_BASE_URL+"/create-board", board);
+    }
+
+    DetailBoards(no){
+        return axios.get(BOARD_API_BASE_URL+"/" + no);
     }
 }
 

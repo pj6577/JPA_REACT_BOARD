@@ -26,3 +26,34 @@ POST http://localhost:8080/api/board net::ERR_FAILED
 CreateBoardComponent:1 Uncaught (in promise) AxiosError {message: 'Network Error', name: 'AxiosError', code: 'ERR_NETWORK', config: {…}, request: XMLHttpRequest, …}
 
 해결 >
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+오류 내용
+ListBoardComponent.jsx:12 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'data')
+    at ListBoardComponent.jsx:12:1
+해결 >
+BoardService getBoard 뒤에 .catch문 삭제
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+오류 내용
+Compiled with problems:X
+
+ERROR in ./src/App.js 58:42-60
+
+export 'ReadBoardComponent' (imported as 'ReadBoardComponent') was not found in './components/ReadBoardComponent' (possible exports: default)
+
+해결> 
+App.js 
+{/* <Route path = "/read-board" element = {<ReadBoardComponent/>}></Route> */}
+{ } < 제거
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+오류 내용
+
+router.ts:11 No routes matched location
+
+
+
+
