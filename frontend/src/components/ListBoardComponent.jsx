@@ -12,6 +12,9 @@ const ListBoardComponent = () => {
             setBoards(res.data);
         });
     }, []);
+
+    
+    
     return (
         <div>
             <h2 className='text-center'>Board List</h2>
@@ -32,24 +35,24 @@ const ListBoardComponent = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {boards.map((boards)=>{
+                        {boards.map((board)=>{
                           // navigate 상세 주소로 수정
                             <tr onClick={()=>{navigate("./CreateBoardComponent", {state:{
-                                no : boards.no,
-                                title : boards.title,
-                                member_no : boards.member_no,
-                                created_time : boards.created_time,
-                                updated_time : boards.updated_time,
-                                likes : boards.likes,
-                                counts: boards.counts }
-                            })}} key ={boards.no}>
-                            <td>{boards.no}</td>
-                            <td>{boards.title}</td>
-                            <td>{boards.member_no}</td>
-                            <td>{boards.created_time}</td>
-                            <td>{boards.updated_time}</td>
-                            <td>{boards.likes}</td>
-                            <td>{boards.counts}</td>
+                                no : board.no,
+                                title : board.title,
+                                member_no : board.member_no,
+                                created_time : board.created_time,
+                                updated_time : board.updated_time,
+                                likes : board.likes,
+                                counts: board.counts }
+                            })}} key = {board.no}>
+                            <td>{board.no}</td>
+                            <td>{board.title}</td>
+                            <td>{board.member_no}</td>
+                            <td>{board.created_time}</td>
+                            <td>{board.updated_time}</td>
+                            <td>{board.likes}</td>
+                            <td>{board.counts}</td>
                             </tr>
                         })}
                     </tbody>
