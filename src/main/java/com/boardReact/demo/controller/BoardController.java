@@ -35,11 +35,12 @@ public class BoardController {
     //PostMapping으로 /create-board로 부터 데이터가 전송되면
     //RequestBody Board board로 body 객체를 생성한다
     //생성한 객체를 boardService.createBoard로 리턴한다
-    @PostMapping("/board/create-board/{id}")
+    @PostMapping("/board/create-board")
     public Board createBoard(@RequestBody Board board){
         System.out.println("creatBoard 컨트롤러 도착");
         return boardService.createBoard(board);
     }
+
 
 
     //글 상세보기 
@@ -52,11 +53,10 @@ public class BoardController {
     }
 
     //update
-    @PutMapping("/board/update-board/{no}")
+    @PutMapping("/update-board/{no}")
     public ResponseEntity<Board> updateBoardByNo(
             @PathVariable Integer no, @RequestBody Board board){
         System.out.println("update url 맞음");
         return boardService.updateBoard(no, board);
     }
-
 }
