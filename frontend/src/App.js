@@ -6,7 +6,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import CreateBoardComponent from './components/CreateBoardComponent';
 import ReadBoardComponent from './components/ReadBoardComponent';
-
+import UpdateBoardComponent from './components/UpdateBoardComponent';
 function App() {
 
   return (
@@ -18,7 +18,8 @@ function App() {
               <Route path = "/" element = {<ListBoardComponent/>}></Route>
               <Route path = "/board" element = {<ListBoardComponent/>}></Route>
               <Route path = "/create-board" element = {<CreateBoardComponent/>}></Route>
-              <Route path = "/read-board/:id" element = {<ReadBoardComponent/>}></Route>
+              <Route path = "/read-board/:no" element = {<ReadBoardComponent/>}></Route>
+              <Route path = "/update-board/:no" element = {<UpdateBoardComponent />}></Route>
             </Routes>
           </div>
         <FooterComponent/> 

@@ -16,7 +16,8 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicInsert
 @DynamicUpdate
 public class Board {
-
+    
+    //DB구조를 설명하고 DTO/VO 역활
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name="no")

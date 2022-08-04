@@ -1,8 +1,9 @@
 import React from 'react';
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 
 const ReadBoardComponent = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const no = location.state.no;
     const title = location.state.title;
@@ -52,8 +53,8 @@ const ReadBoardComponent = () => {
                     </thead>
                 </table>
                 <div className='container'>
-                <button className='btn btn-primary'>수정하기</button>
-                <button className='btn btn-danger'>삭제하기</button>
+                <button className='btn btn-primary' onClick={()=>{navigate("/update-board/"+no)}}>수정 </button>
+                <button className='btn btn-danger'>삭제</button>
                 </div>
             </div>
         </div>

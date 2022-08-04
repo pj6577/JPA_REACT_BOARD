@@ -11,6 +11,9 @@ const ListBoardComponent = () => {
             setBoards(resonse.data);
         });
     }, []);
+
+    
+    
     return (
         <div>
             <h2 className='text-center'>Board List</h2>

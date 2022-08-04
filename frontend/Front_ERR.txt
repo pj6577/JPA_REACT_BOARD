@@ -27,6 +27,7 @@ CreateBoardComponent:1 Uncaught (in promise) AxiosError {message: 'Network Erro
 
 해결 >
 CreateBoardComponent 함수형으로 변경
+Controller  @CrossOrigin 추가
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
