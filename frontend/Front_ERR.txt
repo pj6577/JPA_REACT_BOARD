@@ -26,6 +26,7 @@ POST http://localhost:8080/api/board net::ERR_FAILED
 CreateBoardComponent:1 Uncaught (in promise) AxiosError {message: 'Network Error', name: 'AxiosError', code: 'ERR_NETWORK', config: {…}, request: XMLHttpRequest, …}
 
 해결 >
+CreateBoardComponent 함수형으로 변경
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,6 +54,13 @@ App.js
 오류 내용
 
 router.ts:11 No routes matched location
+
+해결 >
+App.js 
+<Route path = "/read-board" element = {<ReadBoardComponent/>}></Route>
+수정 
+<Route path = "/read-board:id" element = {<ReadBoardComponent/>}></Route>
+
 
 
 

@@ -1,16 +1,12 @@
 import React from 'react';
-import {useLocation, useParams} from "react-router-dom";
-import BoardService from "../service/BoardService";
-
-
-
-
+import {useLocation} from "react-router-dom";
 
 
 const ReadBoardComponent = () => {
     const location = useLocation();
     const no = location.state.no;
     const title = location.state.title;
+    const content = location.state.content;
     const memberNo = location.state.memberNo;
     const createdTime = location.state.createdTime;
     const updatedTime = location.state.updatedTime;
@@ -18,11 +14,11 @@ const ReadBoardComponent = () => {
     const counts = location.state.counts;
     return (
         <div>
-            <div className="row">
+            <div className="row" >
                 <table className="table table-striped table-bordered">
                     <thead>
                     <tr>
-                        <th>상품 번호</th>
+                        <th>게시물 번호</th>
                         <td> {no} </td>
                     </tr>
                     <tr>
@@ -38,6 +34,14 @@ const ReadBoardComponent = () => {
                         <td> {createdTime} </td>
                     </tr>
                     <tr>
+                        <th>수정 일</th>
+                        <td>{updatedTime}</td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td>{content}</td>
+                    </tr>
+                    <tr>
                         <th>좋아요수</th>
                         <td> {likes} </td>
                     </tr>
@@ -47,6 +51,10 @@ const ReadBoardComponent = () => {
                     </tr>
                     </thead>
                 </table>
+                <div className='container'>
+                <button className='btn btn-primary'>수정하기</button>
+                <button className='btn btn-danger'>삭제하기</button>
+                </div>
             </div>
         </div>
     );

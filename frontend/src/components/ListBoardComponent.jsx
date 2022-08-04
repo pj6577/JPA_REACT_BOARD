@@ -36,6 +36,7 @@ const ListBoardComponent = () => {
                             <tr onClick={()=>{navigate("/read-board/"+board.no ,{state:{
                                 no : board.no,
                                 title : board.title,
+                                content : board.contents,
                                 memberNo : board.memberNo,
                                 createdTime : board.createdTime,
                                 updatedTime : board.updatedTime,
