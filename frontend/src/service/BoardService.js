@@ -16,7 +16,7 @@ class BoardService {
         return axios.get(BOARD_API_BASE_URL+"/" + no);
     }
     updateBoard(no, board){
-        return axios.put(BOARD_API_BASE_URL+"/"+no, board);
+        return axios.put(BOARD_API_BASE_URL+"/update-board/"+no, board);
     }
 
 }

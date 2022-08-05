@@ -7,11 +7,12 @@ import com.boardReact.demo.model.Board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping("/api")
 public class BoardController {
@@ -24,7 +25,7 @@ public class BoardController {
 
     //글 전체 출력
     //board url로 넘어온 값을 boardservice에 getAllboard를 호출해서 리턴함
-    @CrossOrigin
+
     @RequestMapping(value = "/board", method = RequestMethod.GET)
     public List<Board> getAllBoards(){
         System.out.println("getAllBoards 컨트롤러 도착");
@@ -53,7 +54,7 @@ public class BoardController {
     }
 
     //update
-    @PutMapping("/update-board/{no}")
+    @GetMapping("/update-board/{no}")
     public ResponseEntity<Board> updateBoardByNo(
             @PathVariable Integer no, @RequestBody Board board){
         System.out.println("update url 맞음");
