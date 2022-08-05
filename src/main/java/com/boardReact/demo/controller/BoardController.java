@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/board")
 public class BoardController {
     @Autowired
     private BoardService boardService;
@@ -53,10 +53,10 @@ public class BoardController {
     }
 
     //update
-    @PutMapping("/update-board/{no}")
+    @RequestMapping(value = "/board/update-board/", method = RequestMethod.POST)
     public ResponseEntity<Board> updateBoardByNo(
-            @PathVariable Integer no, @RequestBody Board board){
+            @RequestBody Board board){
         System.out.println("update url 맞음");
-        return boardService.updateBoard(no, board);
+        return boardService.updateBoard(board);
     }
 }
