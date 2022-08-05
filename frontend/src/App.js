@@ -15,7 +15,7 @@ function App() {
         <HeaderComponent/>
           <div className="container">
             <Routes>       
-              <Route path = "/" element = {<ListBoardComponent/>}></Route>
+              <Route path = "/" exact element = {<ListBoardComponent/>}></Route>
               <Route path = "/board" element = {<ListBoardComponent/>}></Route>
               <Route path = "/create-board" element = {<CreateBoardComponent/>}></Route>
               <Route path = "/read-board/:no" element = {<ReadBoardComponent/>}></Route>

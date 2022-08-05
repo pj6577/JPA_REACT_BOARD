@@ -73,7 +73,6 @@ const UpdateBoardComponent = () => {
       </div>
     </div>
   );
-
 }
 
 export default UpdateBoardComponent;

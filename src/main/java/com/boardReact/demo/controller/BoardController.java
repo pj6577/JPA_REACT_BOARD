@@ -25,7 +25,7 @@ public class BoardController {
     //글 전체 출력
     //board url로 넘어온 값을 boardservice에 getAllboard를 호출해서 리턴함
     @CrossOrigin
-    @RequestMapping(value = "/board", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Board> getAllBoards(){
         System.out.println("getAllBoards 컨트롤러 도착");
         return boardService.getAllBoard();
@@ -35,7 +35,7 @@ public class BoardController {
     //PostMapping으로 /create-board로 부터 데이터가 전송되면
     //RequestBody Board board로 body 객체를 생성한다
     //생성한 객체를 boardService.createBoard로 리턴한다
-    @PostMapping("/board/create-board")
+    @PostMapping("/create-board")
     public Board createBoard(@RequestBody Board board){
         System.out.println("creatBoard 컨트롤러 도착");
         return boardService.createBoard(board);
@@ -53,7 +53,7 @@ public class BoardController {
     }
 
     //update
-    @RequestMapping(value = "/board/update-board/", method = RequestMethod.POST)
+    @RequestMapping(value = "/update-board/", method = RequestMethod.POST)
     public ResponseEntity<Board> updateBoardByNo(
             @RequestBody Board board){
         System.out.println("update url 맞음");
