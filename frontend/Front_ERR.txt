@@ -62,6 +62,16 @@ App.js
 수정 
 <Route path = "/read-board:id" element = {<ReadBoardComponent/>}></Route>
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+오류 내용
+
+500
+@RequestMapping(value = "/board/update-board/", method = RequestMethod.POST)
+
+해결 >
+value 안에 /board/ 추가
+ /update-board/+no =>  return axios.post(BOARD_API_BASE_URL+"/update-board/", board);
 
 
 

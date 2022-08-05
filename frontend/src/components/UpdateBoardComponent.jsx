@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState,  } from 'react';
+import {useNavigate, useLocation, useParams} from 'react-router-dom';
 import BoardService from '../service/BoardService';
 
 const UpdateBoardComponent = () => {
   const navigate = useNavigate();
-
-  
+  const location = useLocation();
+  const {no} = useParams();
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
   const [inputMemberNo, setInputMemberNo] = useState('');
@@ -24,12 +24,13 @@ const UpdateBoardComponent = () => {
   const updateBoard = (e) => {
     e.preventDefault();
     const board = {
+      no : no,
       title: inputTitle,
-      content: inputContent,
+      contents: inputContent,
       memberNo: inputMemberNo
     }
     console.log("board=>" + JSON.stringify(board));
-    BoardService.updateBoard(board).then(res => {
+    BoardService.updateBoard(board, no).then(res => {
       navigate('/board')
     });
   }

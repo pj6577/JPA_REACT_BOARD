@@ -11,12 +11,13 @@ class BoardService {
     createBoard(board){
         return axios.post(BOARD_API_BASE_URL+"/create-board", board);
     }
-
-    DetailBoards(no){
-        return axios.get(BOARD_API_BASE_URL+"/" + no);
-    }
-    updateBoard(no, board){
-        return axios.put(BOARD_API_BASE_URL+"/"+no, board);
+    //
+    // DetailBoards(no){
+    //     return axios.get(BOARD_API_BASE_URL+"/read-" + no);
+    // }
+    updateBoard(board){
+        console.log("서비스도착")
+        return axios.post(BOARD_API_BASE_URL+"/update-board/", board);
     }
 
 }
