@@ -39,8 +39,9 @@ public class BoardService {
 
     //update
     public ResponseEntity<Board> updateBoard(
-            Integer no, Board updateBoard){
+            Board updateBoard){
         System.out.println("updateBoard 서비스 도착");
+        int no = updateBoard.getNo();
         Board board = boardRepository.findById(no).orElseThrow(()->
                 new IllegalArgumentException("해당 글 없음. " + no));
         board.setTitle(updateBoard.getTitle());

@@ -1,13 +1,21 @@
 import React, { useState,  } from 'react';
+<<<<<<< HEAD
 import {useLocation, useNavigate} from 'react-router-dom';
+=======
+import {useNavigate, useLocation, useParams} from 'react-router-dom';
+>>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
 import BoardService from '../service/BoardService';
 import ListBoardComponent from "./ListBoardComponent";
 
 const UpdateBoardComponent = () => {
   const navigate = useNavigate();
   const location = useLocation();
+<<<<<<< HEAD
 
 
+=======
+  const {no} = useParams();
+>>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
   const [inputMemberNo, setInputMemberNo] = useState('');
@@ -28,13 +36,19 @@ const UpdateBoardComponent = () => {
   const updateBoard = (e) => {
     e.preventDefault();
     const board = {
+      no : no,
       title: inputTitle,
-      content: inputContent,
+      contents: inputContent,
       memberNo: inputMemberNo
     }
     console.log("board=>" + JSON.stringify(board));
+<<<<<<< HEAD
     BoardService.updateBoard(board).then(res => {
       navigate('/');
+=======
+    BoardService.updateBoard(board, no).then(res => {
+      navigate('/board')
+>>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
     });
   }
   return (
@@ -76,7 +90,6 @@ const UpdateBoardComponent = () => {
       </div>
     </div>
   );
-
 }
 
 export default UpdateBoardComponent;

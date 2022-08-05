@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/board")
 public class BoardController {
     @Autowired
     private BoardService boardService;
@@ -25,8 +25,13 @@ public class BoardController {
 
     //글 전체 출력
     //board url로 넘어온 값을 boardservice에 getAllboard를 호출해서 리턴함
+<<<<<<< HEAD
 
     @RequestMapping(value = "/board", method = RequestMethod.GET)
+=======
+    @CrossOrigin
+    @RequestMapping(value = "", method = RequestMethod.GET)
+>>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
     public List<Board> getAllBoards(){
         System.out.println("getAllBoards 컨트롤러 도착");
         return boardService.getAllBoard();
@@ -36,7 +41,7 @@ public class BoardController {
     //PostMapping으로 /create-board로 부터 데이터가 전송되면
     //RequestBody Board board로 body 객체를 생성한다
     //생성한 객체를 boardService.createBoard로 리턴한다
-    @PostMapping("/board/create-board")
+    @PostMapping("/create-board")
     public Board createBoard(@RequestBody Board board){
         System.out.println("creatBoard 컨트롤러 도착");
         return boardService.createBoard(board);
@@ -54,10 +59,14 @@ public class BoardController {
     }
 
     //update
+<<<<<<< HEAD
     @GetMapping("/update-board/{no}")
+=======
+    @RequestMapping(value = "/update-board/", method = RequestMethod.POST)
+>>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
     public ResponseEntity<Board> updateBoardByNo(
-            @PathVariable Integer no, @RequestBody Board board){
+            @RequestBody Board board){
         System.out.println("update url 맞음");
-        return boardService.updateBoard(no, board);
+        return boardService.updateBoard(board);
     }
 }
