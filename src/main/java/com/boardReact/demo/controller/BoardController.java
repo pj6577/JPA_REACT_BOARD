@@ -7,12 +7,11 @@ import com.boardReact.demo.model.Board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/board")
 public class BoardController {
@@ -25,13 +24,8 @@ public class BoardController {
 
     //글 전체 출력
     //board url로 넘어온 값을 boardservice에 getAllboard를 호출해서 리턴함
-<<<<<<< HEAD
-
-    @RequestMapping(value = "/board", method = RequestMethod.GET)
-=======
     @CrossOrigin
     @RequestMapping(value = "", method = RequestMethod.GET)
->>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
     public List<Board> getAllBoards(){
         System.out.println("getAllBoards 컨트롤러 도착");
         return boardService.getAllBoard();
@@ -49,7 +43,7 @@ public class BoardController {
 
 
 
-    //글 상세보기 
+    //글 상세보기
     //read-board/{no} 로 no 글 번호가 적힌 글로부터 호출이 오면
     //boardService.getBoard로 글 번호(no)를 리턴한다
     @RequestMapping(value = "/read-board/{no}", method = RequestMethod.GET)
@@ -59,11 +53,7 @@ public class BoardController {
     }
 
     //update
-<<<<<<< HEAD
-    @GetMapping("/update-board/{no}")
-=======
     @RequestMapping(value = "/update-board/", method = RequestMethod.POST)
->>>>>>> ddd4592f8dcc68ea3ed6e554b300550934399c8a
     public ResponseEntity<Board> updateBoardByNo(
             @RequestBody Board board){
         System.out.println("update url 맞음");
