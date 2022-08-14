@@ -14,3 +14,10 @@ DB 구조 확인
 2022-08-03 Back End 주석 작성
 
 2022-08-05 UPDATE 추가
+
+//////////
+CRUD
+
+REGISTER
+
+LOGIN
